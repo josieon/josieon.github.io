@@ -110,7 +110,7 @@ author:
   location         : "South Korea"
   email            : "timekeeperfn@naver.com"
   links:
-    - label: "Email"
+    - label: "timekeeperfn@naver.com"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:timekeeperfn@naver.com"
     - label: "Website"
@@ -285,7 +285,7 @@ defaults:
       share: true
       related: true
       show_date: true
-    classes: wide
+    #classes: wide
   
   #_pages
   - scope:
@@ -299,4 +299,4 @@ defaults:
       share: false
       related: false
       show_date: true
-    classes: wide
+    #classes: wide
