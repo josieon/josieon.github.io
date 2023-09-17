@@ -9,11 +9,14 @@ permalink:           pretty
 lang:                ko-KR
 timezone:            Asia/Seoul
 
+<<<<<<< HEAD
 # About/contact
 author:
   name:              Mark Otto
   url:               https://twitter.com/mdo
   email:             markdotto@gmail.com
+=======
+>>>>>>> 99c60f5957eca32b8612ddae0d87e72b94c9bac0
 title:            Minimal Mistakes
 locale:           en_US
 url:              //mmistakes.github.io/minimal-mistakes

@@ -18,6 +18,7 @@ _site
 
 # OS or Editor folders
 .DS_Store
+<<<<<<< HEAD
 ._*
 Thumbs.db
 .cache
@@ -26,6 +27,8 @@ Thumbs.db
 .tmproj
 *.esproj
 nbproject
+=======
+>>>>>>> 99c60f5957eca32b8612ddae0d87e72b94c9bac0
 *.sublime-project
 *.sublime-workspace
 .idea
@@ -40,6 +43,11 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+<<<<<<< HEAD
 bower_components
 _asset_bundler_cache
 .jekyll-metadata
+=======
+_asset_bundler_cache
+.jekyll-metadata
+>>>>>>> 99c60f5957eca32b8612ddae0d87e72b94c9bac0

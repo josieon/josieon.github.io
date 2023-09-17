@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 source "https://rubygems.org"
@@ -21,3 +22,11 @@ gem "jekyll-sitemap"
 # gem "webrick", "~> 1.8.1"
 gem "jekyll-gist"
 gem "octopress"
+=======
+source "https://rubygems.org"
+
+gem "jekyll", "~> 3.0"
+gem "jekyll-sitemap"
+gem "jekyll-gist"
+gem "octopress"
+>>>>>>> 99c60f5957eca32b8612ddae0d87e72b94c9bac0
