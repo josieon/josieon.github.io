@@ -143,6 +143,17 @@ git pull <remote> <branch>
 ```
 - 협업 시 충돌을 막기 위해 작업 전에 `git pull` 명령어로 시작
 
+### git fetch
+
+`fetch`와 `pull` 비교
+공통점: 원격 저장소에서 최신 메타데이터 정보를 확인하여 변경사항이 있는지 확인
+차이점: `fetch`는 확인만 하고, `pull`은 최신 데이터를 복사하여 로컬에 내용을 가져옴
+
+주의사항은 만약 원격 저장소에 변경 사항이 존재하는 상황에서 `pull`을 바로 실행하면 현재 브랜치와 작업 복사본의 파일이 변경되는 동시에 새로 작업한 내용이 손실되는 일이 생길 수 있다.  
+따라서 `fetch` → `log --all --oneline --graph` → `status`로 변경 사항을 먼저 확인한 후 `pull` 혹은 `merge origin/HEAD`을 실행하는 방법이 보다 안전하다.
+
+`-all` 옵션을 주어서 모든 원격 브랜치를 업데이트할 수 있다. 이는 `git remote update`와 동일하게 동작한다.
+
 ### git reset
 
 - 커밋을 초기화시키고 싶을때 사용
@@ -247,6 +258,40 @@ git merge <branch>
 
 만약 `develop` 브랜치에서 `master` 브랜치의 변경 내역을 가져오고 싶다면, `git checkout develop` → `git merge master` 순서로 명령어를 입력하면 된다.  
 `merge` 과정을 포기하고 싶다면 `git merge --abort` 명령어를 입력하면 된다.
+
+![](https://wikidocs.net/images/page/153871/05.04.01.jpg)
+
+그러나 dev의 모든 commit이 아닌 배포용 버전만 commit으로 남기고 싶을때 옵션을 사용할 수 있다.
+
+![](https://wikidocs.net/images/page/153871/05.04.02.jpg)
+이러한 상황에서 merge를 진행해본다.
+
+1. git merge --ff  
+    `--ff`(fast-forward) 옵션은 현 브랜치와 merge 대상 브랜치가 fast-forward 관계에 있는 경우 새로운 commit을 생성하지 않고 브랜치의 참조 값만 변경되도록 한다. fast-forward 관계가 아니면 merge commit을 생성한다.
+    ```bash
+    git merge --ff dev1
+    ```
+    ![](https://wikidocs.net/images/page/153871/05.04.03.jpg)
+2. git merge --no-ff
+    `--no-ff`(non fast-forward) 옵션은 merge 대상과 fast-forward 관계여도 강제로 merge commit을 생성하고 병합한다.
+    ```bash
+    git merge --no-ff dev1
+    ```
+    명령을 입력하면 새로 생기는 commit의 메시지를 입력하는 편집지가 작동한다.
+    ![](https://wikidocs.net/images/page/153871/05.04.05.jpg)
+
+    `--no-ff` 옵션 merging으로 master 브랜치를 관리하면 두가지 효과를 얻을 수 있다.
+    - 브랜치 관계에 상관없이 필요한 commit만 가져올 수 있다.
+    - 어떤 브랜치에서 merge를 했는지 기록을 남길 수 있다.
+3. git merge --squash
+    commit이력과 merge된 브랜치 이력도 남기지 않는다. 새로운 commit에 상대 브랜치의 내용을 모두 뭉쳐 놓은 것으로 보인다.
+    ```bash
+    git merge --squash dev1
+    ```
+    ![](https://wikidocs.net/images/page/153871/05.04.06.jpg)
+    여기서 유의할 점이 있다.  
+    __`--squash`옵션을 사용하면 커밋까지 생성하지 않는다.__  
+    __상대 브랜치의 작업 내용이 추가되어 파일 상태만 변경된다.__
 
 ### git rebase
 
