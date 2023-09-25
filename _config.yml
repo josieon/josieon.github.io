@@ -17,6 +17,10 @@ author:
 plugins:
   - jekyll-paginate
 
+# jekyll-paginate
+paginate: 5
+paginate_path: "/_posts/page/:num"
+
 # Custom vars
 version:             1.1.0
 google_analytics_id: #UA-XXXX-Y
