@@ -8,15 +8,15 @@ title: Home
     {% for post in paginator.posts %}
     <li>
       <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      {% if post.tags %}
+      <!-- {% if post.tags %}
       <i class="material-icons svg-icon">local_offer</i>
       {% for tag in post.tags %}
       <a class="label" href="{{ '/tags' | prepend: site.baseurl }}">#{{ tag }}</a> &nbsp;
       {% endfor %}
-      {% endif %}
+      {% endif %} -->
       </span>
       <h3>
-        <a class="post-link" href="{{ post.rul | prepend: site.baseurl }}">{{post.title }}</a>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h3>
       <!-- <div class="post">
       <h1 class="post-title">
