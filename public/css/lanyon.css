@@ -34,6 +34,8 @@
  * Update the foundational and global aspects of the page.
  */
 
+ @import url(‘https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap&subset=korean’);
+
 /* Prevent scroll on narrow devices */
 html,
 body {
@@ -41,7 +43,7 @@ body {
 }
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: "Nanum Gothic Coding", "PT Serif", Georgia, "Times New Roman", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
